@@ -105,7 +105,7 @@ cmake -LAH -G "Ninja"                                                     \
     -DWITH_V4L=0                                                          \
     -DWITH_CUDA=0                                                         \
     -DWITH_CUBLAS=0                                                       \
-    -DWITH_OPENCL=0                                                       \
+    -DWITH_OPENCL=1                                                       \
     -DWITH_OPENNI=0                                                       \
     -DWITH_FFMPEG=1                                                       \
     -DWITH_GSTREAMER=0                                                    \
@@ -126,6 +126,11 @@ cmake -LAH -G "Ninja"                                                     \
     -DPNG_INCLUDE_DIR=${PREFIX}/include                                   \
     -DPROTOBUF_INCLUDE_DIR=${PREFIX}/include                              \
     -DPROTOBUF_LIBRARIES=${PREFIX}/lib                                    \
+    -DWITH_CUDA=ON                                                        \
+    -DCUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda                               \
+    -DCUDA_ARCH_BIN=6.0 6.1 7.0                                           \
+    -DBUILD_opencv_cudacodec=OFF                                          \
+    -DBUILD_opencv_cudaoptflow=OFF                                        \
     $PYTHON_SET_FLAG                                                      \
     $PYTHON_SET_EXE                                                       \
     $PYTHON_SET_INC                                                       \

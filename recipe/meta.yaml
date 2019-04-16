@@ -2,16 +2,16 @@
 {% set blas_variant = "openblas" %}
 
 package:
-  name: opencv
+  name: opencv_gpu
   version: {{ version }}
 
 source:
   - url: https://github.com/opencv/opencv/archive/{{ version }}.tar.gz
     fn: opencv-{{ version }}.tar.gz
     sha256: 7b86a0ee804244e0c407321f895b15e4a7162e9c5c0d2efc85f1cadec4011af4
-  - url: https://github.com/opencv/opencv_contrib/archive/{{ version }}.tar.gz
-    fn: opencv_contrib-{{ version }}.tar.gz
-    sha256: 0d8acbad4b7074cfaafd906a7419c23629179d5e98894714402090b192ef8237
+  - url: https://github.com/peper0/opencv_contrib/archive/051171663b0d07e18ae6edbe72ba63bd1693cf93.tar.gz
+    fn: opencv_contrib-2.tar.gz
+    sha256: edd685f913a32599277ff98e5e42c56309f5893fc070d1c15a68034452550aef
     folder: opencv_contrib
 
 build:
@@ -39,9 +39,9 @@ requirements:
   host:
     - python
     - numpy
-    - hdf5                           # [unix]
+    - hdf5 1.10.2                    # [unix]
     - eigen 3.3.*
-    - jasper                         # [unix]
+    - jasper 2.0.14                  # [unix]
     - zlib
     - jpeg
     - libtiff
@@ -55,8 +55,8 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - hdf5                           # [unix]
-    - jasper                         # [unix]
+    - hdf5 1.10.2                    # [unix]
+    - jasper 2.0.14                  # [unix]
     - zlib
     - jpeg
     - libwebp
