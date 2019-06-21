@@ -103,7 +103,6 @@ cmake -LAH -G "Ninja"                                                     \
     -DBUILD_JASPER=0                                                      \
     -DBUILD_JPEG=0                                                        \
     -DWITH_V4L=0                                                          \
-    -DWITH_CUDA=0                                                         \
     -DWITH_CUBLAS=0                                                       \
     -DWITH_OPENCL=1                                                       \
     -DWITH_OPENNI=0                                                       \
@@ -128,7 +127,6 @@ cmake -LAH -G "Ninja"                                                     \
     -DPROTOBUF_LIBRARIES=${PREFIX}/lib                                    \
     -DWITH_CUDA=ON                                                        \
     -DCUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda                               \
-    -DCUDA_ARCH_BIN=6.0 6.1 7.0                                           \
     -DBUILD_opencv_cudacodec=OFF                                          \
     -DBUILD_opencv_cudaoptflow=OFF                                        \
     $PYTHON_SET_FLAG                                                      \
